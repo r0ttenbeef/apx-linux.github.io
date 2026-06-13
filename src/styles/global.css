@@ -283,6 +283,7 @@ button{
   font-size:1.5rem;
 
   margin-bottom:15px;
+  color:#50168a;
 }
 
 .features{
@@ -492,6 +493,68 @@ button{
     drop-shadow(0 0 15px var(--purple));
     
   transform: scale(1.05);
+}
+
+/* Navigation Main Bar Wrapper */
+nav {
+  display: flex;
+  align-items: left;
+  justify-content: flex-start; /* Centers the navigation links on your page fold */
+  gap: 12px;               /* Precise gaps between menu nodes */
+  padding: 1px;
+}
+
+/* Individual Link Elements */
+nav a {
+  font-family: "VT323", monospace;
+  font-size: 1.5rem;     /* Kept compact to stay crisp in pixel format */
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65); /* Soft off-white to make active items pop */
+  
+  padding: 3px 4px;
+  border: 1px solid transparent;
+  position: relative;
+  transition: all 0.15s ease-in-out;
+}
+
+/* Interactive Hover States */
+nav a:hover {
+  color: #ffffff;
+  background: rgba(149, 111, 255, 0.08); /* Transparent neon purple fill */
+  
+  /* Sharp pixel art outline boundary box */
+  border: 1px solid #956fff;
+  
+  /* Signature Radioactive Bleed Glow */
+  box-shadow: 
+    0 0 8px rgba(149, 111, 255, 0.4),
+    inset 0 0 4px rgba(149, 111, 255, 0.2);
+    
+  cursor: pointer;
+  transform: translateY(-1px); /* Subtle physical lift */
+}
+
+/* Active Page Indicator (Optional Utility Class) */
+nav a.active {
+  color: #956fff;
+  border: 1px solid rgba(149, 111, 255, 0.4);
+  text-shadow: 0 0 5px rgba(149, 111, 255, 0.6);
+}
+
+/* Responsive Optimization: Stack cleanly on mobile devices */
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap; /* Allows tabs to drop smoothly to a new line instead of clipping */
+    gap: 8px;
+    padding: 12px;
+  }
+  
+  nav a {
+    font-size: 0.65rem;
+    padding: 8px 12px;
+  }
 }
 
 @media(max-width:1000px){
